@@ -9,7 +9,7 @@ namespace Ucu.Poo.Cards
     /// <summary>
     /// Representa un naipe de póker.
     /// </summary>
-    public class Card
+    public class Card : CardContent
     {
         /// <summary>
         /// Inicializa una nueva instancia de la clase <see cref="Card"/>.
@@ -23,22 +23,12 @@ namespace Ucu.Poo.Cards
         }
 
         /// <summary>
-        /// Obtiene el valor del naipe.
-        /// </summary>
-        public Rank Rank { get; private set; }
-
-        /// <summary>
-        /// Obtiene el palo del naipe.
-        /// </summary>
-        public Suit Suit { get; private set; }
-
-        /// <summary>
         /// Obtiene el texto para imprimir el naipe.
         /// </summary>
         /// <returns>El texto del naipe.</returns>
-        public string GetTextToPrint()
+        public override string GetTextToPrint()
         {
-            return $"{this.Rank} of {this.Suit}";
+            return base.GetTextToPrint();
         }
     }
 }
